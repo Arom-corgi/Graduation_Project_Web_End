@@ -1,7 +1,19 @@
 .no-bullets {
     list-style-type: none;
 }
+
 .gauge_size {
     min-width: 600px;
     height: 400px;
+    margin: 30px 0 15px;
+}
+/* 设置浮动效果 */
+div.gauge_size > * {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 阴影效果 */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* 过渡效果 */
+}
+
+div.gauge_size:hover > * {
+    transform: translateY(-10px); /* 向上移动 */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* 加深阴影 */
 }
