@@ -1,0 +1,7 @@
+.no-bullets {
+    list-style-type: none;
+}
+.gauge_size {
+    min-width: 600px;
+    height: 400px;
+}

@@ -1,0 +1,62 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}title{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    {% block css %}
+    {% endblock %}
+</head>
+<body>
+    <nav class="navbar navbar-expand-md py-0 bg-color">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center font-white" href="#">
+                <span class="bs-icon-sm bs-icon-rounded bs-icon-primary d-flex justify-content-center align-items-center me-2 bs-icon">
+                    <img src="" alt="" class="logo">
+                </span>
+                <span>
+                    健康传感系统
+                </span>
+            </a>
+            <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navcol-3">
+                <span class="visually-hidden">
+                    Toggle navigation
+                </span>
+                <span class="navbar-toggler-icon">
+
+                </span>
+            </button>
+            <div id="navcol-3" class="collapse navbar-collapse">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link font-white" href="#">
+                            心率
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link font-white" href="#">
+                            血氧
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link font-white" href="#">
+                            血压
+                        </a>
+                    </li>
+                </ul>
+                <button class="btn btn-primary" type="button">
+                    登录
+                </button>
+            </div>
+        </div>
+    </nav>
+    {% block content %}
+    {% endblock %}
+    <script src="{% static 'js/bootstrap.min.js' %}" defer></script>
+    <script src="{% static 'js/echarts.min.js' %}"></script>
+    {% block script %}
+    {% endblock %}
+</body>
+</html>

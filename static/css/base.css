@@ -1,0 +1,27 @@
+.logo{
+    width: 1rem;
+    height: 1rem;
+}
+
+.bg-color {
+    background-color: #2c8cf0;
+}
+
+.font-white {
+    color: white;
+}
+
+.font-white:hover {
+    color: #ffffff;
+}
+
+/*.floating-element {*/
+/*    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); !* 阴影效果 *!*/
+/*    transition: transform 0.3s ease, box-shadow 0.3s ease; !* 过渡效果 *!*/
+/*}*/
+
+/*li.nav-item:hover .floating-element {*/
+/*    transform: translateY(-10px); !* 向上移动 *!*/
+/*    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); !* 加深阴影 *!*/
+/*}*/
+
