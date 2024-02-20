@@ -1,4 +1,2 @@
-/graduation_project_web_end/__init__.py
 /.idea
-/db.sqlite3
-/index/migrations/__init__.py
+/.env
