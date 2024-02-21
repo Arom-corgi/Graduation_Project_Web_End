@@ -11,6 +11,7 @@ pip install -r requirements.txt
 ```angular2html
 echo DEBUG=True > .env
 echo DATABASE_URL=mysql://user:password@localhost:3306/dbname >> .env
+echo SECRET_KEY=your_SECRET_KEY
 ```
 
 
