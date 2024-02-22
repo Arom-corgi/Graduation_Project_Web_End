@@ -3,9 +3,9 @@
 }
 
 .gauge_size {
-    min-width: 600px;
+    /*min-width: 600px;*/
     height: 400px;
-    margin: 30px 0 15px;
+    margin: 0 0 30px;
 }
 /* 设置浮动效果 */
 div.gauge_size > * {
@@ -16,4 +16,13 @@ div.gauge_size > * {
 div.gauge_size:hover > * {
     transform: translateY(-10px); /* 向上移动 */
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* 加深阴影 */
+}
+
+.gauge_box {
+    height: 460px;
+}
+
+.title {
+    color: #912e31;
+    font: 40px/1 '楷体';
 }

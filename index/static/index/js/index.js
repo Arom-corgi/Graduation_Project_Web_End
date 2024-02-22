@@ -1,4 +1,4 @@
-// 设置echarts图的方法
+// 设置仪表盘的方法
 function set_echarts(id) {
   let chartDom = document.getElementById(id);
   let mycharts = echarts.init(chartDom);

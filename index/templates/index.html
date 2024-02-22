@@ -7,22 +7,28 @@
 <link rel="stylesheet" href="{% static 'index/css/index.css' %}">
 {% endblock %}
 {% block content %}
-<div class="container">
-    <div class="row">
-        <div id="heart_rate" class="col-lg-6 gauge_size" data-is-int="true"
-             data-name="心率" data-min="30" data-max="150" data-unit="bpm" data-current-value="120">
-        </div>
-        <div id="blood_pressure" class="col-lg-6 gauge_size" data-is-int="true"
-             data-name="血压" data-min="40" data-max="140" data-unit="mmHg" data-current-value="90">
-        </div>
-        <div id="temperature" class="col-lg-6 gauge_size" data-is-int="false"
-             data-name="体温" data-min="35" data-max="38" data-unit="℃" data-current-value="37">
-        </div>
-        <div id="blood_oxygen" class="col-lg-6 gauge_size" data-is-int="false"
-             data-name="血氧" data-min="90" data-max="100" data-unit="%" data-current-value="120">
-        </div>
+    <div class="d-flex justify-content-center align-items-center m-5">
+        <span class="title">体征列表</span>
     </div>
-</div>
+    {#<div class="container">#}
+        <div class="row gauge_box">
+            <div id="heart_rate" class="col-lg-3 gauge_size" data-is-int="true"
+                 data-name="心率" data-min="30" data-max="200" data-unit="bpm" data-current-value="120">
+            </div>
+            <div id="blood_oxygen" class="col-lg-3 gauge_size" data-is-int="false"
+                 data-name="血氧" data-min="90" data-max="100" data-unit="%" data-current-value="120">
+            </div>
+            <div id="blood_pressure" class="col-lg-3 gauge_size" data-is-int="true"
+                 data-name="血压" data-min="40" data-max="140" data-unit="mmHg" data-current-value="90">
+            </div>
+            <div id="temperature" class="col-lg-3 gauge_size" data-is-int="false"
+                 data-name="体温" data-min="35" data-max="38" data-unit="℃" data-current-value="37">
+            </div>
+        </div>
+    {#</div>#}
+    <div class="container">
+
+    </div>
 {% endblock %}
 {% block script %}
 <script src="{% static 'index/js/index.js' %}" defer></script>

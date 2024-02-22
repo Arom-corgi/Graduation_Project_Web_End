@@ -3,10 +3,15 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 from index.forms import *
+from index.models import *
 
 
 # Create your views here.
 def index(request):
+    # heart_rate =
+    # context = {
+    #     'heart_rate': heart_rate,
+    # }
     return render(request, 'index.html')
 
 
@@ -62,3 +67,25 @@ def user_logout(request):
     logout(request)
     messages.info(request, '您已成功登出')
     redirect('index')
+
+
+@login_required
+def bind_device(request):
+    if request.method == 'POST':
+        form = UserBindDevice(request.POST)
+        if form.is_valid():
+            unique_id = form.cleaned_data['unique_id']
+            try:
+                device = Device.objects.get(unique_id=unique_id, is_bind=False)
+                # 设备存在且未被绑定
+                BindDevice.objects.create(user=request.user, device=device)
+                device.is_bind = True  # 更新设备为已绑定状态
+                device.save()
+                messages.success(request, '设备绑定成功！')
+                return redirect('index')
+            except Device.DoesNotExist:
+                # 该设备不存在数据库中或已被绑定
+                messages.error(request, '您可能输入的设备ID有误或已被占用')
+    else:
+        form = UserBindDevice()
+    return render(request, 'user_bind.html', {'form': form})

@@ -14,3 +14,7 @@ class UserRegisterForm(UserCreationForm):
 class UserLoginForm(forms.Form):
     username = forms.CharField(max_length=100, label="用户名")
     password = forms.CharField(widget=forms.PasswordInput, label="密码")
+
+
+class UserBindDevice(forms.Form):
+    unique_id = forms.CharField(max_length=100, label="设备ID")
