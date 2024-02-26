@@ -37,8 +37,9 @@ class DeviceData(models.Model):
     device = models.ForeignKey(Device, on_delete=models.CASCADE, related_name='data')
     timestamp = models.DateTimeField(auto_now_add=True)
     heart_rate = models.IntegerField(blank=True, null=True)  # 心率
-    blood_oxygen = models.IntegerField(blank=True, null=True)  # 血氧水平
+    blood_oxygen = models.FloatField(blank=True, null=True)  # 血氧水平
     temperature = models.FloatField(blank=True, null=True)  # 温度
+    blood_pressure = models.IntegerField(blank=True, null=True) # 血压
     # 可根据需要添加更多字段
 
     def __str__(self):

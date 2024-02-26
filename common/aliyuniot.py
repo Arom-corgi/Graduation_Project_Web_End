@@ -89,7 +89,7 @@ class MyListener(stomp.ConnectionListener):
                 heart_rate=heart_rate,
                 blood_oxygen=blood_oxygen,
                 temperature=temperature,
-                blood_pressure=str(blood_pressure)  # 假设血压字段是字符串类型
+                blood_pressure=blood_pressure  # 假设血压字段是字符串类型
             )
             print(f"设备 {unique_id} 的数据存储成功")
         except Device.DoesNotExist:
