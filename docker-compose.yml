@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  web:
+    build: .
+    command: gunicorn graduation_project_web_end.wsgi:application --bind 0.0.0.0:8000
+    volumes:
+      - .:/usr/src/app
+    ports:
+      - "8000:8000"
+    depends_on:
+      - redis
+  celery:
+    build: .
+    command: celery -A graduation_project_web_end worker --loglevel=info
+    volumes:
+      - .:/usr/src/app
+    depends_on:
+      - redis
+  celerybeat:
+    build: .
+    command: celery -A graduation_project_web_end beat --loglevel=info
+    volumes:
+      - .:/usr/src/app
+    depends_on:
+      - redis
+  redis:
+    image: "redis:latest"
